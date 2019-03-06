@@ -1,9 +1,12 @@
 const loadReCaptcha = siteKey => {
-  const script = document.createElement('script')
+  const scriptLocal = document.createElement("script");
+  const scriptGlobal = document.createElement("script");
 
-  script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
+  scriptLocal.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+  scriptGlobal.src = `https://www.recaptcha.net/recaptcha/api.js?render=${siteKey}`;
 
-  document.body.appendChild(script)
-}
+  document.body.appendChild(scriptLocal);
+  document.body.appendChild(scriptGlobal);
+};
 
-export default loadReCaptcha
+export default loadReCaptcha;
